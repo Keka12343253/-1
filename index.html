@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ветролесье — Главная</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      color: #eee;
+      background: #121212;
+      background-image: url('background.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Добавим тёмный полупрозрачный оверлей для контраста текста */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(18, 18, 18, 0.7);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 28px;
+      color: #ffffff;
+      letter-spacing: 1px;
+      user-select: none;
+    }
+
+    nav.nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 32px;
+    }
+
+    .nav-link {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 6px 4px;
+      transition: color 0.3s ease;
+      z-index: 11;
+    }
+
+    .nav-link:hover {
+      color: #fff;
+    }
+
+    .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+    }
+
+    main {
+      position: relative;
+      z-index: 11;
+      max-width: 960px;
+      margin: 60px auto;
+      padding: 40px 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.45);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+
+    main h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+    }
+
+    main p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #ddd;
+      max-width: 640px;
+      margin: 0 auto 18px;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+    }
+
+    .btn-primary {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 14px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #fff;
+      color: #121212;
+      text-decoration: none;
+      border-radius: 32px;
+      box-shadow: 0 4px 14px rgba(255, 255, 255, 0.4);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      z-index: 11;
+    }
+
+    .btn-primary:hover {
+      background-color: #eaeaea;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: rgba(18, 18, 18, 0.85);
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 14px;
+      color: #aaa;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      box-shadow: 0 -2px 12px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+      }
+      nav.nav ul {
+        gap: 20px;
+        justify-content: center;
+      }
+      main {
+        margin-top: 80px;
+        padding: 20px 16px;
+        border-radius: 12px;
+      }
+      main h1 {
+        font-size: 2.4rem;
+      }
+      .btn-primary {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ветролесье</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html" class="nav-link active">Главная</a></li>
+        <li><a href="map.html" class="nav-link">Карта</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Добро пожаловать в Ветролесье</h1>
+    <p>Погрузитесь в мир приключений, легенд и загадок ролевой игры.</p>
+    <p>Здесь вы найдете карты, мифологию и истории персонажей, которые делают мир живым и захватывающим.</p>
+    <a href="map.html" class="btn-primary">Открыть карту</a>
+  </main>
+
+  <footer>
+    © 2025 Ветролесье. Все права защищены.
+  </footer>
+</body>
+</html>
